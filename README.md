@@ -8,6 +8,32 @@ Shift Baru: Shift C
 
 ## Penjelasan Langkah-Langkah
 
+### Proses Register
+
+1. Menginputkan Nama, Email, dan Password
+   
+   ![Lampiran Registrasi Page](registrasi_page.png)
+   ![Lampiran Registrasi Form](registrasi_form.png)
+
+   - Tampilan Halaman Registrasi
+     - Pada bagian ini, kita menggunakan `TextFormField` untuk input data, yang mencakup input Nama, Email, Password, dan Konfirmasi Password. Setiap field disertai dengan validasi, sehingga data yang dimasukkan memenuhi syarat yang telah ditentukan (contoh: panjang minimal untuk nama adalah 3 karakter dan password adalah 6 karakter).
+     - Tombol Registrasi
+       Tombol ini akan memvalidasi form dan jika valid, akan memanggil fungsi `submit` untuk memproses registrasi.
+   - Memproses Input Data
+     - Jika tombol registrasi diklik, data akan dikirimkan ke server melalui `RegistrasiBloc` yang melakukan request ke API. `RegistrasiBloc` bertanggung jawab untuk mengirim data ke server menggunakan method post dari helper Api.
+     - Fungsi `_submit` akan mengirim data ke server dan menampilkan dialog sukses atau gagal. 
+   
+2. Respon Berhasil/Gagal
+   
+   ![Lampiran Registrasi Berhasil](registrasi_sukses.png)
+   ![Lampiran Registrasi Gagal](registrasi_gagal.png)
+   ![Lampiran Data Register Tidak Sesuai](registrasi_datasalah.png)
+
+   - Menampilkan hasil berupa dialog sukses atau gagal.
+     - Jika registrasi berhasil, dialog sukses akan ditampilkan
+     - Jika registrasi gagal, dialog gagal akan muncul.
+     - Jika penginputan data tidak sesuai ketentuan, warning untuk validasi di form akan muncul
+
 ### Proses Login
 1. Menginputkan Email dan Password
 
@@ -37,32 +63,6 @@ Shift Baru: Shift C
    - Respon Berhasil/Gagal
      - Login Berhasil: Pengguna akan diarahkan ke halaman `ProdukPage`.
      - Login Gagal: Dialog peringatan muncul, memberitahukan bahwa login gagal.
-
-### Proses Register
-
-1. Menginputkan Nama, Email, dan Password
-   
-   ![Lampiran Registrasi Page](registrasi_page.png)
-   ![Lampiran Registrasi Form](registrasi_form.png)
-
-   - Tampilan Halaman Registrasi
-     - Pada bagian ini, kita menggunakan `TextFormField` untuk input data, yang mencakup input Nama, Email, Password, dan Konfirmasi Password. Setiap field disertai dengan validasi, sehingga data yang dimasukkan memenuhi syarat yang telah ditentukan (contoh: panjang minimal untuk nama adalah 3 karakter dan password adalah 6 karakter).
-     - Tombol Registrasi
-       Tombol ini akan memvalidasi form dan jika valid, akan memanggil fungsi `submit` untuk memproses registrasi.
-   - Memproses Input Data
-     - Jika tombol registrasi diklik, data akan dikirimkan ke server melalui `RegistrasiBloc` yang melakukan request ke API. `RegistrasiBloc` bertanggung jawab untuk mengirim data ke server menggunakan method post dari helper Api.
-     - Fungsi `_submit` akan mengirim data ke server dan menampilkan dialog sukses atau gagal. 
-   
-2. Respon Berhasil/Gagal
-   
-   ![Lampiran Registrasi Berhasil](registrasi_sukses.png)
-   ![Lampiran Registrasi Gagal](registrasi_gagal.png)
-   ![Lampiran Data Register Tidak Sesuai](registrasi_datasalah.png)
-
-   - Menampilkan hasil berupa dialog sukses atau gagal.
-     - Jika registrasi berhasil, dialog sukses akan ditampilkan
-     - Jika registrasi gagal, dialog gagal akan muncul.
-     - Jika penginputan data tidak sesuai ketentuan, warning untuk validasi di form akan muncul
 
 ### Proses Tambah Data Produk
 1. Menginputkan Kode Produk, Nama Produk, dan Harga
