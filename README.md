@@ -135,10 +135,24 @@ Shift Baru: Shift C
    
     ![Lampiran Delete Produk](produk_hapus.png)
 
+   - Tampilan Halaman Detail Produk
+     - Aplikasi menampilkan detail produk yang mencakup Kode Produk, Nama Produk, dan Harga Produk. Tombol untuk Edit dan Hapus data produk disediakan di bawah detail produk melalui widget `OutlinedButton`.
+     - Ketika tombol DELETE ditekan, akan memicu metode `confirmHapus()`.
+   - Fungsi `confirmHapus()` akan menampilkan AlertDialog yang berisi pesan konfirmasi: "Yakin ingin menghapus data ini?".
+     - AlertDialog ini memiliki dua tombol:
+       - Ya – untuk mengonfirmasi penghapusan
+       - Batal – untuk membatalkan aksi.
+
 2. Respon Berhasil/Batal
 
    ![Lampiran Delete Produk Batal](produk_detail.png)
    ![Lampiran Delete Produk Berhasil](produk_page.png)
+
+   - Proses Hapus Berhasil
+     - Jika pengguna memilih tombol Ya, maka produk akan dihapus dengan memanggil fungsi deleteProduk() dari ProdukBloc berdasarkan id produk yang ingin dihapus. Jika penghapusan berhasil, pengguna akan diarahkan kembali ke halaman ProdukPage.
+     - Jika penghapusan gagal (misalnya karena ada masalah koneksi atau kesalahan lain), maka akan muncul `WarningDialog` yang berisi pesan "Hapus gagal, silahkan coba lagi".
+   - Proses Batal
+     - Jika pengguna memilih tombol Batal, maka dialog akan ditutup tanpa melakukan aksi apa pun. Dialog ditutup dengan `Navigator.pop(context)`.
 
 ### Proses Logout
 
@@ -146,7 +160,19 @@ Shift Baru: Shift C
 
    ![Lampiran Logout](logout.png)
 
+   - Tampilan Sidemenu
+     - Tampilan halaman produk (ProdukPage) dilengkapi dengan fitur drawer yang berfungsi sebagai navigasi samping. Drawer ini diimplementasikan menggunakan widget `Drawer`, yang menampilkan daftar item melalui `ListView`. Salah satu item dalam list ini adalah tombol Logout.
+     - `ListTile` pada drawer digunakan untuk menampilkan opsi Logout. Opsi ini terdiri dari:
+       - Title: Menampilkan teks "Logout".
+       - Trailing Icon: Menampilkan ikon logout dengan ikon `Icons.logout`.
+     - Saat item ini ditekan, metode `onTap` akan dijalankan, yang melakukan proses logout dan pengalihan ke halaman LoginPage.
+
 2. Respon Berhasil
 
    ![Lampiran Logout Berhasil](login_page.png)
+
+   - Proses Logout
+     - Fungsi logout diimplementasikan dalam metode `LogoutBloc.logout()`. Fungsi ini melakukan proses logout dari aplikasi. Setelah logout berhasil, aplikasi akan diarahkan kembali ke halaman login (`LoginPage`). 
+     - Fungsi `LogoutBloc.logout()` memanfaatkan pendekatan asynchronous (`async` dan `await`) untuk memastikan bahwa proses logout selesai sebelum melanjutkan ke langkah berikutnya.
+     - Fungsi `pushAndRemoveUntil()` digunakan untuk mengganti halaman saat ini dan semua halaman sebelumnya dengan halaman baru, dalam hal ini, halaman login (`LoginPage`). Dengan cara ini, setelah logout, pengguna tidak bisa kembali ke halaman produk atau halaman lain di aplikasi.
    
