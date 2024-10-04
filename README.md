@@ -1,16 +1,23 @@
-# tokokita
+# Tugas Pertemuan 5
 
-Prak PemMob - Pertemuan 4
+Nama : Aura Devany Salsabila Bachtiar
 
-## Getting Started
+NIM : H1D022015
 
-This project is a starting point for a Flutter application.
+Shift Baru: Shift C
 
-A few resources to get you started if this is your first Flutter project:
+## Penjelasan
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Proses Login
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Menginputkan Email dan Password
+  
+  ![Lampiran Login](login_page.png)
+- Pop Up
+  
+  ![Lampiran Login Gagal](login_gagal.png)
+  
+Proses Tambah Data Produk
+
+- Menginputkan Username dan Password
+- Pop Up 
