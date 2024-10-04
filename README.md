@@ -78,7 +78,7 @@ Shift Baru: Shift C
 1. Menampilkan dan Menginputkan Kode Produk, Nama Produk, dan Harga
 
    ![Lampiran Edit Produk](produk_edit.png)
-   ![Lampiran Detail Produk Berhasil](produk_editform.png)
+   ![Lampiran Form Edit Produk](produk_editform.png)
    
 3. Respon Berhasil/Gagal
 
@@ -87,8 +87,22 @@ Shift Baru: Shift C
 
 ### Proses Delete Data Produk
 
-1. XXX
+1. Menampilkan Pop Up Delete
+   
+    ![Lampiran Delete Produk](produk_hapus.png)
+
+2. Respon Berhasil/Batal
+
+   ![Lampiran Delete Produk Batal](produk_detail.png)
+   ![Lampiran Delete Produk Berhasil](produk_page.png)
 
 ### Proses Logout
 
-1. XXXX
+1. Menampilkan Sidemenu Logout
+
+   ![Lampiran Logout](logout.png)
+
+2. Respon Berhasil
+
+   ![Lampiran Logout Berhasil](login_page.png)
+   
