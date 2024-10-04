@@ -145,8 +145,8 @@ Shift Baru: Shift C
 
 2. Respon Berhasil/Batal
 
-   ![Lampiran Delete Produk Batal](produk_detail.png)
    ![Lampiran Delete Produk Berhasil](produk_page.png)
+   ![Lampiran Delete Produk Batal](produk_detail.png)
 
    - Proses Hapus Berhasil
      - Jika pengguna memilih tombol Ya, maka produk akan dihapus dengan memanggil fungsi deleteProduk() dari ProdukBloc berdasarkan id produk yang ingin dihapus. Jika penghapusan berhasil, pengguna akan diarahkan kembali ke halaman ProdukPage.
