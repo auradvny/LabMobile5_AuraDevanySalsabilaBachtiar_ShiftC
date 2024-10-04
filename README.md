@@ -108,13 +108,26 @@ Shift Baru: Shift C
 
 1. Menampilkan dan Menginputkan Kode Produk, Nama Produk, dan Harga
 
-   ![Lampiran Edit Produk](produk_edit.png)
-   ![Lampiran Form Edit Produk](produk_editform.png)
+   ![Lampiran Edit Produk Page](produk_edit.png)
+   ![Lampiran Edit Produk Form](produk_editform.png)
+
+   - Tampilan Halaman Ubah Produk
+     - Pada halaman `ProdukForm`, pengguna dapat mengedit data produk (Kode Produk, Nama Produk, dan Harga Produk). Ketika pengguna membuka halaman ini, data yang ada akan dimuat ke dalam form sebagai nilai awal.
+     - `initState()`: Memeriksa apakah `widget.produk` berisi data (jika produk sedang diedit). Jika ya, nilai-nilai produk tersebut diisi dalam field form, dan tombol submit diubah menjadi "UBAH".
+     - Field input ini menggunakan widget `TextFormField` untuk memasukkan data produk seperti Kode, Nama, dan Harga.
+   - Tombol Ubah
+     - Setelah pengguna selesai menginputkan atau mengubah data, mereka dapat menekan tombol submit. Tombol ini akan menjalankan logika penyimpanan atau pengubahan produk sesuai dengan apakah pengguna sedang mengedit produk atau menambahkan produk baru.
+     - Saat tombol ditekan, validasi dilakukan terlebih dahulu. Jika semua field valid, aplikasi memutuskan apakah produk akan diperbarui (fungsi ubah) atau ditambah (fungsi simpan).
+     - Produk yang diupdate adalah produk yang sudah ada, identifikasinya menggunakan `id` produk yang ada di dalam `widget.produk`. 
    
-3. Respon Berhasil/Gagal
+2. Respon Berhasil/Gagal
 
    ![Lampiran Detail Produk Berhasil](produk_editberhasil.png)
    ![Lampiran Detail Produk Gagal](produk_editgagal.png)
+
+   - Aplikasi menampilkan respons kepada pengguna setelah proses simpan atau ubah selesai.
+     - Berhasil: Aplikasi akan berpindah kembali ke halaman `ProdukPage` yaitu List Produk jika proses berhasil.
+     - Gagal: Jika proses gagal (karena data inputan tidak sesuai syarat), aplikasi menampilkan dialog peringatan menggunakan `WarningDialog`.
 
 ### Proses Delete Data Produk
 
